@@ -1,0 +1,77 @@
+\documentclass[table,oneside,11pt]{book}
+
+\input{configuracion/m03estilo.tex}
+\input{configuracion/m03letras.tex}
+\input{configuracion/m03colores.tex}
+\input{configuracion/m03comandos.tex}
+\input{configuracion/m03entornos.tex}
+\input{configuracion/m03config.tex}
+
+\begin{document}
+
+\includepdf{imagenes/portada_teoria.pdf} % Portada en formato A4
+
+\newpage
+\parindent=0mm    % Sangría
+\pagestyle{empty}
+\let\cleardoublepage\clearpage
+\titulo{% Autor(es) 
+	    \fhv{16}{Facultad de Ciencias Económicas}\\[1em]
+        \fhv{16}{Universidad Nacional de Tucumán}
+        }{% pre-título
+          \fntb[phv][18]{\verde NOTAS TEÓRICAS PARA\phantom{1}}
+        }{% Título principal
+            \begin{tabular}{r}
+  \fntb[phv][30]{\color{colordominante}MATEMÁTICA III }\\[0.5cm]      
+  \end{tabular}
+        }{% Adicional
+        \fntb[phv][14]{AÑO 2025\phantom{11}}
+        }
+
+\pagenumbering{roman}
+\date{} % sin fecha
+
+%\tableofcontents  % tabla de contenidos
+
+\pagenumbering{arabic}                 % Numeración arabiga
+\pagestyle{fancy}  
+
+\newpage
+\input{capitulos/ch_prologo.tex}
+
+\newpage%
+\vspace*{5cm}
+
+\begin{flushleft}
+\textbf{INTEGRANTES DE LA CÁTEDRA}
+\end{flushleft}
+
+\begin{center}
+{\arrayrulecolor{gray!5} % Color de las líneas de la tabla
+\rowcolors{1}{gray!20}{gray!10}
+\begin{tabular}{>{\raggedright}m{8cm}>{\raggedright\arraybackslash}m{8cm}}
+\hline
+\fhv{12}{MA. Santiago FOGUET} & \fhv{10}{\wverde{Profesor Asociado a/c de Cátedra}} \\
+\hline
+\fhv{12}{Esp. Marta Lía MOLINA} & \fhv{10}{\wverde{Profesora Adjunta}} \\
+\hline
+\fhv{12}{Lic. Sandra Noemí FRANCO} & \fhv{10}{\wverde{Jefa de Trabajos Prácticos}} \\
+\hline
+\fhv{12}{Sr. Mateo Sebastián MOLINA} & \fhv{10}{\wverde{Ayudante estudiantil}} \\
+\hline
+\end{tabular}}
+\end{center}
+
+\input{capitulos/ch_funciones_reales.tex}
+%\input{capitulos/ch_derivadas_funciones.tex}
+%\input{capitulos/ch_funciones_implicitas.tex}
+%\input{capitulos/ch_funciones_homogeneas.tex}
+%\input{capitulos/ch_concavidad_convexidad.tex}
+%\input{capitulos/ch_extremos_no_condicionados.tex}
+%\input{capitulos/ch_extremos_condicionados.tex}
+%\input{capitulos/ch_integrales_dobles.tex}
+%\input{capitulos/ch_ecuaciones_diferenciales.tex}
+%\input{capitulos/ch_series_potencia.tex}
+%\input{capitulos/ch_bibliografia.tex}
+
+\end{document}

@@ -1,0 +1,334 @@
+\chapter{Funciones Reales de Varias Variables}
+
+\begin{informacion}[colbacktitle=myblue]{\Large Contenidos}
+\begin{cirlist}
+    \item Definición del conjunto $\Rn$.Representación gráfica de 
+    subconjuntos de $\R^{2}$. Dominio y rango. Gráfica de funciones de $2$ 
+    variables independientes y de sus dominios. Definición de curvas de nivel. 
+    Propiedades. Límite y continuidad de funciones de dos variables.
+    \item 	Entornos de un punto. Puntos frontera y Puntos interiores de un 
+    conjunto. Conjuntos: acotados, abiertos, cerrados, convexos.
+    \item	Definición de Funciones reales de varias variables independientes. 
+    Dominio y rango. Gráfica de funciones de 2 variables independientes y de 
+    sus dominios.
+    \item Definición de curvas de nivel. Propiedades.
+    \item Límite de Funciones de dos Variables: Definición intuitiva y 
+    rigurosa de límite o límite doble. Límites sucesivos o iterados. Límite 
+    Radial.
+    \item Continuidad de una función de dos variables. Continuidad en un 
+    punto. Propiedades.
+\end{cirlist}
+\end{informacion}
+
+
+\begin{informacion}[colbacktitle=mostaza]{\Large Objetivos}
+Al finalizar el estudio de esta unidad temática serás capaz de:
+\begin{cirlist}
+    \item Identificar y analizar funciones de varias variables.
+    \item Graficar curvas de nivel como método para representar geométricamente 
+    funciones de dos variables
+    \item Interpretar geométricamente los conceptos de límite y calcular 
+    limites.
+    \item Determinar la continuidad y clasificar las discontinuidades de una 
+    función.
+    \item Analizar la continuidad de funciones en situaciones problemáticas.
+\end{cirlist}
+\end{informacion}
+
+
+\begin{informacion}[colbacktitle=morado]{\Large Conocimientos Previos}
+Para los objetivos propuestos necesitarás revisar los siguientes contenidos: 
+\begin{cirlist}
+    \item Funciones reales de una variable real. Definición. Dominio y rango.
+    \item Funciones algebraicas simples: función lineal, cuadrática y racional.
+    \item Funciones exponencial, logarítmica y trigonométricas. 
+    \item Límite y continuidad de funciones de una variable real
+\end{cirlist}
+\end{informacion}
+
+
+\section{Conjuntos de $\Rn$. Representación gráfica de subconjuntos de $\Rn$ }
+
+Para desarrollar los conceptos de esta unidad definiremos algunos conceptos 
+importantes y necesarios para el desarrollo de los contenidos de esta unidad, 
+entre ellos: distancia entre dos puntos, vecindario, punto interior y punto 
+frontera ya utilizados en matemática pero que ahora los definiremos para puntos 
+de $\Rn$.
+
+\begin{definicion}[Distancia entre dos puntos]
+Sean los puntos $P(x_1, x_2, \dots, x_n)$  y  $Q(y_1,y_2,\dots, y_n)$. La 
+distancia entre $P$ y $Q$ está dada por:
+
+$$d = \overline{PQ} = \sqrt{(x_{1}-y_{1})^{2}+(x_{2}-y_{2})^{2}
+                        + \cdots +(x_{n}-y_{n})^{2}}$$
+\end{definicion}
+
+\begin{multicols}{2}
+{\bf Observación:} si $P \, y \, Q \, \in \R^{2}$\ la definición de 
+distancia entre dos puntos quedaría: Si $P$ es un punto fijo de coordenadas 
+$(a, b)$ y $Q$ un punto variable de coordenadas $(x, y)$, 
+$d=\sqrt{(x-a)^{2}+(y-b)^{2}}$, entonces $Q$ es un punto que pertenece a la 
+circunferencia con centro en $P(a, b)$ y radio d como se muestrea en la 
+figura \ref{fg_distancia}.
+
+\begin{center}
+    \includegraphics[scale= 2]{imagenes/distancia_puntos.png}
+        \captionof{figure}{Distancia entre dos puntos de $\R^{2}$}
+        \label{fg_distancia}
+\end{center}
+\end{multicols}
+
+\subsection*{Entornos de un punto de $\Rn$}
+
+\begin{definicion}[Vecindario abierto de centro $P_1$ y radio $r$]
+Sea $P_1 = (y_1, y_2,\dots, y_n)$ entonces el vecindario de centro $P_1$ y radio
+$r$ es el conjunto de todos los puntos P de $\Rn$ tales que su distancia al 
+punto $P_1$ sea menor que $r$.
+
+Simbólicamente:
+
+\begin{equation*}
+    \begin{split}
+    V(P_1,r) & = \left\{ P \in \Rn \sth d(P,P_1) < r \right\} \\
+             & = \left\{ P \in \Rn \sth \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 +
+             \cdots + (x_n - y_n)^2 < r}
+             \right\}
+    \end{split}
+\end{equation*}
+\end{definicion}
+
+
+\textbf{Observaciones}
+
+\begin{itemize}
+    \item En el caso de $n=2$ tenemos que el vecindario de centro $P(a,b)$ y 
+    radio $h$ es
+
+    $$V(P,h) = V((a,b),h)  =\left\{(x,y)/d=\sqrt{(x-a)^{2}+(y-b)^{2}}<h\right\}$$
+
+    O sea: 
+ 
+    $$(x,y) \sth \sqrt{(x-a)^{2}+(y-b)^{2}}<h \Rightarrow (x-a)^{2}+(y-b)^{2}<h^{2}$$
+
+
+    \begin{multicols}{2}
+    Geométricamente el vecindario $V(P, h)$ es el conjunto de los puntos del 
+    plano interiores al círculo con centro en $P(a, b)$ y radio $h$ que se 
+    muestra en la figura \ref{fg_vec_ab_2d}
+
+    \begin{center}
+        \includegraphics[scale=1.5]{imagenes/vecindario_abierto_2d.png}
+        \captionof{figure}{Vecindario en $\Rn$}
+        \label{fg_vec_ab_2d}
+    \end{center}
+    \end{multicols}
+
+    \item En el caso de $n=3$ tenemos que, el vecindario de centro $P(a,b,c)$ y 
+    radio $h$ es:
+
+      $$V(P,h)=V((a,b,c),h)=\left\{(x,y,z)/d=\sqrt{(x-a)^{2}+(y-b)^{2}+(z-c)^{2}}<h\right\}$$
+    o sea,
+
+    $$ (x,y,z)\sth \sqrt{(x-a)^{2}+(y-b)^{2}+(z-c)^{2}}<h\Rightarrow(x-a)^{2}+(y-b)^{2}+(z-c)^{2}<h^{2}$$
+
+    \begin{multicols}{2}
+    Geométricamente el vecindario $V(P, h)$ es el conjunto de los puntos del 
+    espacio  interiores a una esfera con centro en $P(a, b,c)$ y radio $h$ como  
+    se muestra en la figura \ref{fg_vec_ab_3d}
+
+    \begin{center}
+    \includegraphics[scale=1.5]{imagenes/vecindario_abierto_3d.png}
+    \captionof{figure}{Vecindario en $\R^{3}$}
+    \label{fg_vec_ab_3d}
+    \end{center}
+    \end{multicols}
+\end{itemize}
+
+\begin{definicion}[Vecindario reducido del punto $P_1$ y radio $h$]
+ Sea $P_1 = (y_1,y_2, \dots, y_n)$ entonces el vecindario reducido de centro $P_1$ 
+ y radio $r$ es el vecindario que resulta de excluir su centro.
+
+Simbólicamente:
+\begin{equation*}
+    \begin{split}
+        V^{*}(P_{1},r) & = V(P_{1},r)-\left\{P_{1}\right\} 
+                         = \left\{P \in \Rn \sth 0< d(P,P_1)<r \right\} \\
+                       & = \left\{P \in \Rn \sth 0<\sqrt{(x_1-y_1)^{2}+(x_2-y_2)^{2}
+                           +\cdots + (x_n-y_n)^{2}} < r\right\}
+    \end{split}
+\end{equation*}
+\end{definicion}   
+
+\textbf{Observación}:
+
+En el caso de $n=2$ tenemos que el vecindario reducido de centro $P(a,b)$ y 
+radio $h$ es
+
+$$V^{*}(P,h)=V^{*}((a,b),h)=\left\{(x,y) \sth 0<\sqrt{(x-a)^{2}+(y-b)^{2}}<h\right\}$$
+
+o sea 
+
+$$ (x,y) \sth 0<\sqrt{(x-a)^{2}+(y-b)^{2}}<h\Rightarrow 0<(x-a)^{2}+(y-b)^{2}<h^{2}$$
+
+\begin{multicols}{2}
+Geométricamente el vecindario  reducido de centro $P(a,b)$ y radio $h$ es el 
+conjunto de los puntos del plano interiores al círculo con centro en $P(a, b)$ 
+y radio $h$, excluido el centro $P(a,b)$ como se muestra en la figura 
+\ref{fg_vec_red_2d}.
+
+\begin{center}
+    \includegraphics[scale=2]{imagenes/vecindario_reducido_2d.png}
+    \captionof{figure}{Vecindario reducido de un punto de $\R^2$}
+    \label{fg_vec_red_2d}
+\end{center}
+\end{multicols}
+
+\begin{definicion}[Punto interior]
+Un punto $P$ perteneciente a un conjunto $D \subset \Rn$, se dice que es 
+\textbf{interior} a D si existe un $V(P, h)$ totalmente incluido en $D$. 
+
+O sea:
+
+$$P \text{ es interior a } D \text{ si existe } V(P,h) \subset D$$
+\end{definicion}
+
+\begin{multicols}{2}
+En la Figura \ref{fg_pto_int} se muestra un conjunto $D$ en el cual el punto $P$
+es interior a $D$, mientras que el punto $H$ no es interior a $D$.
+
+Los puntos interiores de una región conforman (como conjunto) el 
+\textbf{interior de la región}.
+
+\begin{center}
+    \includegraphics[scale=1]{imagenes/punto_interior.png}
+    \captionof{figure}{Punto interior}
+    \label{fg_pto_int}
+\end{center}
+\end{multicols}
+
+\begin{definicion}[Punto frontera]
+    Un punto $P$ se dice punto frontera del conjunto  $D \subset \Rn$, el cual 
+    puede o no pertenecer, si cualquier $V(P, h)$ contiene algún punto de $D$ 
+    y algún punto de fuera de $D$.
+\end{definicion}
+
+\begin{multicols}{2}
+Si $n=2$ , o sea $D \subset \R^2$ en la figura \ref{fg_pto_fron} se muestra un 
+punto frontera
+
+\begin{center}
+    \includegraphics[scale=2]{imagenes/punto_frontera.png}
+    \captionof{figure}{Punto frontera}\label{fg_pto_fron}
+    \end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+Al conjunto de todos los puntos frontera del conjunto D se lo denomina 
+\textbf{la frontera de $D$}.
+
+\begin{center}
+    \includegraphics[scale=1.5]{imagenes/frontera.png}
+    \captionof{figure}{Gráfica de la frontera de $D$}
+    \label{fg_frontera}
+    \end{center}
+\end{multicols}
+
+\begin{definicion}[Conjunto abierto]
+Un conjunto $ A \subset \Rn$  es un conjunto abierto si, para cada punto $P$ 
+de $A$ se puede encontrar un vecindario $V(P, h)$ incluido en $A$. O sea, 
+si todos los puntos de $A$ son interiores.
+\end{definicion}
+
+\begin{definicion}[Conjunto cerrado]
+Un conjunto $ A \subset \Rn$  es un conjunto cerrado si todos los puntos 
+frontera de $A$ pertenecen al conjunto $A$. 
+\end{definicion}
+
+\begin{definicion}[Conjunto acotado]
+Un conjunto $ A \subset \Rn$  es un conjunto acotado si existe algún número 
+real $h>0$ y un punto $ P \in \Rn \sth A \subset  V(P,h)$.
+\end{definicion}
+
+A continuación mostramos algunos ejemplos de los conjuntos definidos 
+anteriormente.
+
+\begin{multicols}{2}
+La gráfica de la figura \ref{fg_abierto_acotado} muestra un conjunto abierto 
+y acotado.
+
+\begin{center}
+    \includegraphics[scale=0.25]{imagenes/abierto_acotado.png}
+    \captionof{figure}{Conjunto abierto y acotado}
+    \label{fg_abierto_acotado}
+    \end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+La gráfica de la figura \ref{fg_cerrado_acotado} muestra un conjunto cerrado 
+y acotado.
+
+\begin{center}
+    \includegraphics[scale=0.25]{imagenes/cerrado_acotado.png}
+    \captionof{figure}{Conjunto cerrado y acotado}
+    \label{fg_cerrado_acotado}
+    \end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+La gráfica de la figura \ref{fg_cerrado_no_acotado} muestra un conjunto cerrado y 
+no acotado.
+
+\begin{center}
+    \includegraphics[scale=0.25]{imagenes/cerrado_no_acotado.png}
+    \captionof{figure}{Conjunto cerrado y no acotado}
+    \label{fg_cerrado_no_acotado}
+    \end{center}
+\end{multicols}
+
+\begin{definicion}[Conjunto convexo]
+Un conjunto $ A \subset \Rn$ es un conjunto convexo si: dados dos puntos 
+cualesquiera $X$ e $Y$ de $A$ el segmento que los une está incluido en  
+conjunto $A$. Simbólicamente,
+
+$$ A \subset \Rn \text{ es un conjunto convexo si } 
+\overline{XY} \subset A;\;\; \forall X \in A \text{ y } \forall Y \in A $$
+ 
+\end{definicion}
+
+Esta condición se la podría expresar también de la siguiente manera:
+
+Un conjunto $ A \subset \Rn$  es un conjunto convexo si 
+$\lambda X + (1-\lambda )Y \in A,\; \forall X\in A;\; \forall Y\in A;\; 
+\lambda \in [0,1]$.
+
+
+\begin{nota}
+    \begin{minipage}{0.60\textwidth}
+    $\overline{XY} =\left\{Z \sth \exists\, \lambda  \in [0,1]:Z=\lambda X+(1-\lambda ) Y\right\}$
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[scale=0.35]{imagenes/segmento_xy.png}
+        \captionof{figure}{Gráfica del segmento $\overline{XY}$}
+        \label{fg_segmento_xy}
+    \end{minipage}
+\end{nota}
+
+
+\section{Introducción al concepto de funciones}
+
+\subsection*{Función Real de $n$ variables independientes}
+
+\subsection*{Función Real de $2$ variables independientes}
+
+\subsection*{Gráfica de una función de $2$ variables}
+
+\subsection*{Curvas de nivel de una función de dos variables}
+
+\subsection*{Límites de funciones de dos variables}
+
+\subsection*{Continuidad de funciones de dos variables}
+
+
+

@@ -1,0 +1,209 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PAQUETES %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{wrapfig} 
+\usepackage{lscape}
+%\usepackage[autostyle, spanish = mexican]{csquotes}
+\usepackage{xcolor}
+\usepackage{pstricks}
+\usepackage[many]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{tikz,tkz-tab}
+\usepackage{tikzpagenodes}
+\usepackage{xargs}  
+\usepackage[hypcap=false]{caption}
+%\usepackage[breaklinks,colorlinks=true, linkcolor=azulF, 
+%            citecolor=azulF, urlcolor=azulF]{hyperref}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}%
+\usepackage{latexsym,cancel,stackrel,stmaryrd}
+%\usepackage[ruled,vlined,lined,linesnumbered,algochapter]{algorithm2e}
+\usepackage{framed}
+\usepackage{titletoc}
+\usepackage{calc}
+\usepackage{colortbl} 
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{wasysym}
+\usepackage{xtab}
+\usepackage{booktabs}
+\usepackage[shortlabels]{enumitem}
+%\usepackage{textgreek}
+\usepackage{esvect}
+\usepackage{fancyhdr}
+\usepackage[explicit]{titlesec}                                                 
+\usepackage{epigraph}
+\usepackage{xpatch}
+\usepackage{answers}
+\usepackage{xstring}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{array}
+\usepackage[absolute]{textpos}
+\usepackage{pdfpages}
+
+\usepackage[fixed]{fontawesome6}
+
+\usepackage[a4paper, centering,
+            text={17cm,26cm},
+            showframe=false]{geometry}
+
+\usepackage{rotating}
+
+%-------------------------------------------------------------------------------
+% Título
+%-------------------------------------------------------------------------------
+\newcommand*{\titulo}[4]{\begingroup%
+\raggedleft 
+\vspace*{\baselineskip} % Espacio en blanco en la parte superior de la página
+{#1}\\[0.167\textheight] % Autor
+{#2}\\[\baselineskip] % pre-título
+{#3}\\ % Título
+{#4}\par % Descripción adicional
+\bigskip
+
+\vfill % Espacio en blanco entre el bloque de título y "la editorial"
+
+{\raggedright
+%\begin{minipage}[c]{0.08\textwidth}
+%\raisebox{-2.0cm}{\includegraphics[width=1.4cm]{images/fau}}
+% \end{minipage}
+\hfill\begin{minipage}[t]{0.9\textwidth}
+{\color{gray}
+ \fhv{9}{Serie Cuadernos }\\
+ \fhvb{9}{\color{azulF}Notas téoricas para Matemática III-FACE-UNT.}
+  \fntg[pag][8]{\color{grisF}
+  }}
+\end{minipage}          
+}%raggedright
+\vspace*{3\baselineskip} % Espacio en blanco antes del final de página
+\endgroup}
+% Fin Titulo--------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+% Cabeceras
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+ \renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+ \fancyhf{} % borra cabecera y pie actuales
+ \fancyhead[R]{\bfseries \helv\thepage} %Left Even page - Right Odd page
+
+ \renewcommand{\headrulewidth}{0pt} % Sin raya. Con raya?: cambiar {0} por {0.5pt}
+ \renewcommand{\footrulewidth}{0pt}
+ \setlength\headheight{14.5pt}
+ \fancyheadoffset[R]{0.0cm} %Numeración de página en el borde de la página
+  \addtolength{\headheight}{0.5pt} % espacio para la raya
+ \fancypagestyle{plain}{%
+ \fancyhead{} % elimina cabeceras y raya en páginas "plain"
+ \renewcommand{\headrulewidth}{0pt} }
+% Fin cabeceras ---------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+% Copypright, ISBN, ...
+%------------------------------------------------------------------------------
+\def\copyrightpage{\thispagestyle{empty}%
+\vbox to\textheight\bgroup\vfill\obeylines\obeyspaces\xcopyrightpage}
+
+\def\xcopyrightpage#1#2\end#3{\scriptsize\parindent=0pt
+Copyright\copyright{#1} 
+\vskip40pt
+#2\vskip200pt\egroup\endgroup}
+\let\endcopyrightpage\relax
+% Fin Copyright-----------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+% CAPITULO Estilo simple
+%----------------------------------------------------------------------------------------
+\newlength\ChapWd
+\settowidth\ChapWd{\huge\chaptertitlename}
+
+\titleformat{\chapter}[display]
+  {\normalfont\filcenter\sffamily}
+  {\tikz[remember picture,overlay]
+    {
+    \node[fill=myblue,font=\fontsize{60}{72}\selectfont\color{white},anchor=north east,minimum size=\ChapWd] 
+      at ([xshift=-15pt,yshift=-15pt]current page.north east) 
+      (numb) {\thechapter};
+    \node[rotate=90,anchor=south,inner sep=0pt,font=\LARGE] at (numb.west) {\chaptertitlename};
+    }
+  }{0pt}{\fontsize{26}{31}\selectfont\color{myblue}#1}[\vskip-15pt\rule{15cm}{.1pt}]
+\titlespacing*{\chapter}{0pt}{10pt}{15pt}
+
+\makeatletter
+\xpatchcmd{\ttl@printlist}{\endgroup}{{\noindent\color{myblue}\rule{\textwidth}{1.5pt}}\vskip30pt\endgroup}{}{}
+\makeatother
+
+\newcommand\DoPToC{%
+\startcontents[chapters]
+\printcontents[chapters]{}{1}{\noindent{\color{myblue}\rule{\textwidth}{1.5pt}}\par\medskip}%
+}
+
+%-------------------CONTENIDO -----------------------------------------------------
+%\usepackage{kpfonts}
+%\usepackage{titletoc}
+\contentsmargin{0cm}
+\titlecontents{chapter}[0pc]
+{\addvspace{30pt}%
+\begin{tikzpicture}[remember picture, overlay]%
+\draw[fill=white,draw=white] (-4,-.1) rectangle (0.0,0.5);% rectángulo antes del "capítulo tal"
+\pgftext[left,x=-1.5 cm,y=0.2cm]{\color{verdeF}\Huge\sc\bfseries \ \thecontentslabel}%
+\end{tikzpicture}\color{verdeF}\large\sc\bfseries}%
+{}
+{}
+{\;\titlerule\;\large\sc\bfseries Página \thecontentspage
+\begin{tikzpicture}[remember picture, overlay]
+\draw[fill=white,draw=verdeF] (2pt,0) rectangle (6,0.1pt);
+\end{tikzpicture}}%
+\titlecontents{section}[2.4pc]
+{\addvspace{1pt}}
+{\contentslabel[\color{verdeF}\thecontentslabel]{2.4pc}}
+{}
+{\hfill\small \color{azulF}\thecontentspage}
+[]
+\titlecontents*{subsection}[4pc]
+{\addvspace{-1pt}\small}
+{}
+{}
+{\hfill\small \color{verdeF}\thecontentspage}
+[ \textbullet\ ][]
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+%Título: Indice General
+\chapter*{\contentsname}%
+\@starttoc{toc}}
+\makeatother
+
+% Fin Contenido -------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	Numeración de las secciones -- en el margen
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{morado}{\csname the#1\endcsname}\hspace{1ex}}}                    
+\renewcommand{\section}{\@startsection{section}
+{1}{0.8cm}%0.9 corre la numeración hacia adentro
+{-4ex \@plus -1ex \@minus -.4ex}
+{1ex \@plus.2ex }
+{\color{azulF}\normalfont\Large\sffamily\bfseries}}
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+{-3ex \@plus -0.1ex \@minus -.4ex}
+{0.5ex \@plus.2ex }
+{\color{azulF}\normalfont\large\sffamily\bfseries}}
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+{-2ex \@plus -0.1ex \@minus -.2ex}
+{0.2ex \@plus.2ex }
+{\color{azulF}\normalfont\sffamily\bfseries}}                        
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+{-2ex \@plus-.2ex \@minus .2ex}
+{0.1ex}
+{\normalfont\small\sffamily\bfseries}}
+\makeatother
+% Fin numeración secciones

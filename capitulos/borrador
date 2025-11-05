@@ -1,0 +1,363 @@
+
+
+
+
+\begin{nota}
+  \begin{multicols}{2}
+{ $\overline{XY} =\left\{Z/\exists \lambda  \in [0,1]:Z=\lambda X+(1-\lambda ) Y\right\}$}\\
+\begin{center}
+    \includegraphics[scale=0.5]{IMAGENES/SEGMENTO XY.png}\captionof{figure}{Gráfica del segmento $\overline{XY}$}\label{figura 10}
+    \end{center}
+    
+\end{multicols}  
+\end{nota}
+
+\begin{ejemplo}
+    \begin{enumerate}
+        \item
+        \begin{multicols}{2}
+             Dado $P=(a,b)\in {R^{2}}$ entonces \\$V(P,h)=\left\{(x,y)\in {R^{2}}/\sqrt{(x-a)^{2}+(y-b)^{2}}<h \right\}$
+             es un conjunto convexo. Esto se puede ver gráficamente en la figura \ref{figura 10} \\
+             \begin{center}
+    \includegraphics[scale=1]{IMAGENES/VECINDARIO CONVEXO.png}\captionof{figure}{Gráfica del V(P,h)}\label{figura 10}
+    \end{center}
+             
+        \end{multicols}
+        \item
+        \begin{multicols}{2}
+             Dado el conjunto $A=\left\{(x,y)\in R^{2}/ 1<x^{2}+y^{2}<4 \right\}$. Podemos ver de la gráfica de este conjunto que se muestra en la figura \ref{figura 11} que el mismo no es un conjunto convexo  \\
+             \begin{center}
+    \includegraphics[scale=1.25]{IMAGENES/EJEMPLO NO CONVEXO.png}\captionof{figure}{Gráfica del V(P,h)}\label{figura 11}
+    \end{center}
+    \end{multicols}
+      
+    \end{enumerate}
+       
+\end{ejemplo}
+
+ \section{FUNCIONES DE VARIAS VARIABLES}
+\subsection{Introducción al concepto de funciones}
+En el razonamiento económico, cuando una variable económica determina de forma unívoca los valores que toma otra, estamos ante una relación que se puede modelizar mediante una función de una variable real. Pero en cualquier fenómeno económico nos encontramos con que hay variables interactuando y estos casos también pueden modelizarse mediante la noción de función de varias variables reales. Por ejemplo: \\
+\textit{Cuando se habla del volumen de ventas total de un producto que se ofrece en el mercado, reconocemos que el mismo depende del precio al que se ofrece en el mercado, pero también de otros factores adicionales como la cantidad gastada en promocionar el producto, los precios de los productos de la competencia, etc.}\\
+Este es sólo un ejemplo donde se advierte la necesidad de estudiar funciones de varias variables independientes, ya que desempeñan un importante papel en la interpretación de los fenómenos económicos. \\
+Como no es fácil detallar las variables que influyen en un sistema económico determinado, los economistas hacen una abstracción del mundo real y elaboran modelos sencillos intentando reducir los fenómenos económicos a situaciones manejables, para analizar las interrelaciones entre sus diferentes componentes.\\
+Recordemos la definición de función para una variable que se estudió en Matemática I y II
+\begin{definicion}
+    \textbf{Una función de una variable independiente}es un un conjunto de pares ordenados de números reales, en el cual dos pares ordenados diferentes no tienen el mismo primer elemento.\\
+    En forma simbólica sería:\\
+    $ f=\left\{(x,y)/y=f(x), x\in dom f \wedge y\in rgo f \right\}$\\
+    Donde  el conjunto formado por todas las primeras componentes de los pares ordenados es el dominio de la función y el de las segundas componentes es el rango de la función. 
+    \end{definicion}
+Sin embargo para estudiar el tema Funciones de Varias Variables enunciaremos una definición más general de función, para el caso de \textbf{n} variables independientes, y luego, a partir de ella, deduciremos la definición para el caso de dos variables independientes.  
+
+    \begin{nota}
+        Recordemos que toda definición general en matemática, incluye los casos particulares, como sería el de una variable independiente
+    \end{nota}
+    \subsection{Función real de \textbf{n} variables independientes}
+        
+    
+    \begin{definicion}[Función real de n variables independientes]
+    Una Función Real de \textbf{n} Variables Independientes es un conjunto de pares ordenados de la forma (P, z) en el cual dos pares ordenados diferentes no tienen el mismo primer elemento.\\
+    Simbólicamente sería:\\
+    f={(P,z)/z=f(P)} donde $P\in \Re ^{n}; z\in \Re $\\
+    Recordemos que $\Re ^{n}$ es el conjunto de todos los puntos del espacio n-dimensional. Como $P\in \Re ^{n}\Rightarrow P=(x_{1},x_{2},x_{3},\cdots ,x_{n})$ , o sea que P es una n-upla ordenada de números reales. \\
+    O sea que podemos escribir la notación de función como:\\
+     $f=\left\{ ((x_{1},x_{2},x_{3},\cdots ,x_{n}),z)/z=f(x_{1},x_{2},x_{3},\cdots ,x_{n})\right\}$\\
+    Donde $(x_{1},x_{2},x_{3},\cdots ,x_{n})$ son las \textbf{variables independientes} y \textbf{z} es la \textbf{variable dependiente}
+        
+    \end{definicion}
+    El \textbf{dominio de f} es el conjunto de todas las n-uplas para las cuales está definida la función.\\
+El \textbf{rango de f }es el conjunto de todos los posibles valores reales de z.\\
+En la definición anterior, observamos que en el par ordenado (P, z) es muy importante reconocer a qué conjunto pertenece el punto P. Entonces en el caso particular de que el punto $P\in \Re ^{2}$  definimos:\\
+\begin{definicion}[Función real de dos variables independientes]
+Es un conjunto de pares ordenados de la forma (P, z) en el cual dos pares ordenados diferentes no tienen el mismo primer elemento, donde $P =(x,y)\in \Re ^{2}\;, z\in \Re $\\
+Simbólicamente:\\
+$f=\left\{((x,y),z)/z=f(x,y) \right\}=\left\{ (x,y,z)/z=f(x,y)\right\}$\\
+Donde \textbf{x} e \textbf{y} son \textbf{las variables independientes }y \textbf{z} es la \textbf{variable dependiente}\\
+
+
+
+
+    
+\end{definicion}
+
+Entonces se puede decir que el conjunto de pares ordenados de números reales para los cuales está definida la función se llama \textbf{dominio de la función}. Esto lo formalizamos en la siguiente definición:\\
+\begin{definicion}[Dominio de una función de dos variables independientes]
+\textbf{Dominio de f} es el conjunto de pares ordenados de números reales (x, y), para los cuales z es un número real. Simbólicamente denotamos:\\
+$dom f=\left\{(x,y)/\exists z\in \Re \wedge z=f(x,y) \right\}$
+    
+\end{definicion}
+\begin{definicion}[Rango de una función de dos variables independientes]
+\textbf{Rango de f }es el conjunto de valores reales que toma la variable dependiente z. Simbólicamente denotamos:\\
+$ rgo f=\left\{z\in \Re /z=f(x,y)\wedge (x,y)\in domf \right\}$
+    
+\end{definicion}
+\begin{ejemplo}
+   Determine y grafique el dominio de la función definida por $ f(x,y)=\frac{1}{x-1}+\frac{1}{y-2}$. Indique si el mismo es abierto, cerrado, acotado o convexo.\\
+   La expresión representa una función de dos variables entones:\\
+   $domf=\left\{(x,y)\in \mathbb{R}^{2}/x\neq 1\wedge y\neq 2 \right\}$\\
+   La gráfica del dominio está representado en la figura \ref{figura 12}\\
+   \begin{center}
+       \includegraphics[scale=0.55]{IMAGENES/ejemplo dominio 1.png}\captionof{figure}{Gráfica de un dominio abierto , no acotado y convexo}\label{figura 12} 
+   \end{center}
+      
+\end{ejemplo}
+
+\begin{ejemplo}
+   Determine  el dominio de la función definida por $f(x,y,z)=a^{\frac{y^{2}}{x}}+ln\left ( y+z \right )$. $¿\exists f(1,1,-1)?\; ;¿(0,0,1)\in domf?\: ;(1,1,2)\in domf?$\\
+   La expresión representa una función de tres variables entonces:\\
+   $domf=\left\{ (x,y,z)\in \mathbb{R}^{3}/ x\neq 0\wedge y+z>0\right\}$
+  \begin{itemize}
+      \item $(1,1,-1)\notin dom f \: pues\: y+z=0\ngtr 0\Rightarrow no\: existef(1,1,-1)$
+  \item $(0,0,1)\notin domf\: pues\: x=0$
+  \item (1,1,2)\in  domf\: pues\: x=1\neq 0\wedge y+z=1+2=3>0
+  \end{itemize}
+  
+      
+\end{ejemplo}
+\begin{ejemplo}
+    Dada la función definida por: $f(x,y)=\frac{\sqrt{y-x^{2}}}{x^{2}+(y-1)^{2}}$ se pide:
+    \begin{enumerate}
+        \item Halle y grafique el dominio de f.\\
+        En este caso como la función es de dos variables tenemos que:\\
+        $domf=\left\{ (x,y)\in \mathbb{R}^{2}/y-x^{2}\geq 0\wedge x^{2}+(y-1)^{2}\neq 0\right\}=\left\{ (x,y)\in \mathbb{R}^{2}/y-x^{2}\geq 0\wedge (x,y)\neq (0,1)\right\}$
+        \\La gráfica del dominio de f está representado en la figura \ref{figura 13}
+         \begin{center}
+       \includegraphics[scale=1.25]{IMAGENES/grafica dominio 2.png}\captionof{figure}{Gráfica del dominio de f, cerrado , no acotado y convexo}\label{figura 13} 
+   \end{center}
+        \item Halle y grafique los  $(x,y)\in domf \: tal\: que\: f(x,y)=0$\\
+        $f(x,y)=0\Rightarrow \sqrt{y-x^{2}}=0\Rightarrow y=x^{2}$\\
+        Entonces f(x,y)=0 $\forall (x,y)\in \left\{(x,y)\in domf/y=x^{2} \right\}$\\
+        O sea que su gráfica son todos los puntos fronteras del dom f.
+        
+    \end{enumerate}
+\end{ejemplo}
+\subsection{Gráfica de funciones de dos variables}
+Recordemos que la gráfica de una funcion de una variable consiste en el conjunto de puntos $\left ( x,y \right )\mathbb{R}^{2}$ para los cuales se cumple que y = f(x).\\
+Análogamente, la gráfica de una función de dos variables independientes será un subconjunto de $\mathbb{R}^{3}$.\\
+Por lo que la gráfica de una función de dos variables independientes no es fácil de visualizar , como tampoco lo es graficarla.\\
+\begin{definicion}[Grafica de una función de dos variables]
+    Si  f  es  una  función  de  dos  variables, entonces la gráfica de la función f es el conjunto de todos los puntos (x, y, z) en para los cuales (x, y) es un punto del dominio de f y z = f(x, y). Se representa en el espacio tridimensional.\\
+    Simbólicamente la gráfica de la función de dos variables independientes es el conjunto S:\\
+    $S=\left\{(x,y,z)\in \mathbb{R}^{3} / z=f(x,y)\wedge (x,y)\in dom f\right\}$
+    
+\end{definicion}
+Por lo tanto, la gráfica de una función f de dos variables es una superficie del espacio tridimensional de coordenadas (x, y, z). 
+\begin{multicols}{2}
+             En la figura \ref{figura 14} se observa una la gráfica de una función de ecuación z =f(x,y)  , en la cual el punto (a,b,f(a,b)) es un punto que pertenece a la gráfica de f, mientras que el par ordenado (a,b) pertenece al dominio de la función  \\
+             \begin{center}
+    \includegraphics[scale=1.25]{IMAGENES/GRAFICA FUNCION 2 VARIABLES.png}\captionof{figure}{Gráfica de una función de dos variables}\label{figura 14}
+    \end{center}
+    \end{multicols}
+    \begin{ejemplo}
+        \begin{multicols}{2}
+             En la figura \ref{figura 15} se muestra la gráfica de la función de dos variables cuya ecuación es: $f(x,y)=5-\left ( x-2 \right )^{2}-\left ( y-3 \right )^{2}$  \\
+             \begin{center}
+    \includegraphics[scale=1.25]{IMAGENES/EJEMPLO GRAFICA FUNCION 2 VARIABLES.png}\captionof{figure}{Gráfica de de la función f}\label{figura 15}
+    \end{center}
+    \end{multicols}
+    \end{ejemplo}\\
+    Otro método útil para representar geométricamente funciones de dos variables independientes consiste en intersectar la superficie con planos paralelos al plano coordenado  XY, situados a distintas alturas de dicho  plano. Cuando estas intersecciones se   proyectan sobre el plano coordenado, generan una serie  de curvas en el plano XY, que se denominan \textbf{curvas de nivel de la superficie}\\
+    \begin{definicion}
+        Las curvas de nivel de una función f, definida por  z = f(x, y), son las curvas proyectadas en el plano XY, de ecuaciones z = f(x, y) = K, con K constante real y K $\in $ rgo f 
+
+    \end{definicion}
+    
+    \begin{multicols}{2}
+             En la figura \ref{figura 16} se muestra la gráfica de una función f de dos variables , un plano de ecuacion $ z= C$ con $C\in rgo f$ y la proyección sobre el plano coordenado XY de la curva de nivel f(x,y)= C \\
+             \begin{center}
+    \includegraphics[scale=1.30]{IMAGENES/curva de nivel 1.png} }\captionof{figure}{Gráfica de  la función f}\label{figura 16}
+    \end{center}
+    \end{multicols}
+    
+\begin{ejemplo}[Curva de nivel de una función de dos variables]
+Determine y grafique las curvas de nivel, si existen, para z = -1, 0, 1 y 2 de la función definida por:  $z=x^{2}+y^{2} $\\
+Como $ z\geq 0\; \forall (x,y)\in \mathbb{R}^{2}$
+ entonces $rgo f=\left [ 0,\infty  \right ]\\
+ \Rightarrow z=-1\notin rgof$ , pues -1<0 y por lo tanto no representa una curva de nivel.\\
+\begin{itemize}
+    \item $ z=0\Rightarrow x^{2}+y^{2}=0\Rightarrow representa el Punto O(0,0)$
+    \item $ z=1\Rightarrow x^{2}+y^{2}=1\Rightarrow $ representa una circunferencia de centro C(0,0) y radio r=1
+    \item $ z=2\Rightarrow x^{2}+y^{2}=2\Rightarrow $representa una circunferencia de centro C(0,0) y radio r =$\sqrt{2}$
+\end{itemize}
+A continuación la figura \ref{figura 17} representa las curvas de nivel halladas para esta función.
+\begin{center}
+    \includegraphics[scale=1.30]{IMAGENES/ejemplo curva nivel.png} }\captionof{figure}{Curvas de nivel de f}\label{figura 17}
+    \end{center}
+\end{ejemplo}
+\textbf{Propiedades de las curvas de nivel}
+\begin{itemize}
+    \item	Las curvas de nivel se representan en el plano XY.
+    \item	Sobre cada curva de nivel pueden variar x o y, pues z permanece constante.
+\item Las curvas de nivel, correspondientes a distintos valores de K, no pueden interceptarse pues se contradice la condición de unicidad en la definición de función.
+\item Para cada valor de K existe una única curva de nivel.
+    
+\end{itemize}
+\subsection{Limites de funciones de dos variables independientes}
+La definición del concepto de límite para funciones de dos variables es la misma que utilizaron en cursos anteriores para funciones de una variable.
+O sea que el límite de una función en un punto es el valor numérico al que se aproximan los valores de la función a medida que nos aproximamos al punto, cualquiera sea el camino elegido para llegar al punto.
+\begin{definicion}[Definición intuitiva de límite para funciones de dos variables]
+Sea f una función de dos variables independientes definida en una región D del plano XY, con (a, b) que puede o no pertenecer a D, diremos que el  $\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)=L$   si los valores de f se aproximan al número L, a medida que (x, y) se aproxima a (a, b), cualquiera sea el camino que se tome
+
+\end{definicion}
+\begin{definicion}[Definición rigurosa de límite para funciones de dos variables o límite doble]
+Sea f una función de dos variables independientes definida en un V(a, b), excepto posiblemente en (a, b). Decimos que \\ 
+\[\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)=L\;si\;\:\forall\varepsilon>0\:\;\exists\\;un\;numero\;h>0/\left|f(x,y)-L\right|<\varepsilon\:\;siempre\:\;que\;0<\sqrt{(x-a)^{2}+(y-b)^{2}}<h\]\\
+
+
+\end{definicion}
+Se llama límite doble porque las variables x e y tienden simultáneamente e independientemente una de la otra al punto (a, b), o sea siguiendo un camino cualquiera.\\
+\begin{nota}
+        Si una función tiene límite en un punto, dicho límite es único y ese valor debe obtenerse cualquiera sea el camino que se tome al tender (x, y) hacia (a, b).\\
+        Si la función tiene diferentes límites cuando (x, y) se aproxima a (a, b) por dos caminos diferentes, entonces decimos que \textbf{no existe el límite.}
+    \end{nota}
+    No veremos, en esta asignatura, el cálculo del límite de una función de dos variables aplicando la definición.\\
+Sin embargo, vamos a definir algunos límites de la función que resultan de recorrer alguno de los posibles caminos mediante los cuales (x, y) se aproxima al punto (a, b). \\
+Según el camino que se tome para hacer tender (x, y) a (a, b), los límites se denominan: 
+\begin{definicion}[Limites sucesivos o iterados]
+En este caso, se consideran dos límites, como su nombre lo indica, sucesivos que dependen de una sola variable. En el primero hacemos tender una variable, dejando fija la otra, e inmediatamente consideramos el otro límite de la función haciendo tender la variable que se consideró fija.\\
+Simbólicamente\\
+$ L_{1}=\displaystyle\lim_{y\to b}\left[\displaystyle\lim_{x\to a}f(x,y)\right]$
+   Cuando primero se considera fija a la variable y.\\
+   $ L_{2}=\displaystyle\lim_{x\to a}\left[\displaystyle\lim_{y\to b}f(x,y)\right]$ Cuando primero se considera fija a la variable x
+\end{definicion}
+\begin{itemize}
+    \item Si $ L_{1}\neq L_{2}\Rightarrow no\;existe\;\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)$, o sea que no existe el límite doble
+    \item Si $L_{1}=L_{2}$ ,debemos considerar otros caminos, ya que no podemos decir de la existencia o no del $\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)$
+\end{itemize}
+
+\textbf{Gráficamente}, los caminos recorridos con estos limites se muestran en la figura \ref{figura 18} que muestra el camino que se recorre en el llamado limite iterado $L_{1}$ y en la figura \ref{figura 19} se muestra el camino que se recorre en el limite iterado $L_{2}$	
+
+\begin{multicols}{2}
+\begin{center}
+    \includegraphics[scale=1.30]{IMAGENES/camino L1.png} }\captionof{figure}{$ L_{1}=\displaystyle\lim_{y\to b}\left[\displaystyle\lim_{x\to a}f(x,y)\right]$}\label{figura 18}
+    \end{center}
+    \begin{center}
+    \includegraphics[scale=1.30]{IMAGENES/camino L2.png} }\captionof{figure}{$ L_{2}=\displaystyle\lim_{x\to a}\left[\displaystyle\lim_{y\to b}f(x,y)\right]$}\label{figura 19}
+    \end{center}
+\end{multicols}
+\begin{definicion}[Limite Radial]
+Es aquel, en el cual consideramos como camino rectas que pasan por el punto (a, b), de ecuación   $y = m(x-a)+b$. \\
+\textbf{Simbólicamente} \\
+$L_{R}=\displaystyle\lim_{\begin{matriz}x\to a\\;y=m(xa)+b\end{matriz}}f(x,y)$
+    
+\end{definicion}
+\textbf{Gráficamente} ,considerar al Límite radial $L_{R}$, implica aproximar el punto (x,y) al punto (a,b) mediante un haz de rectas que pasan por el punto (a,b). La figura \ref{figura 20} muestra el camino por el que se acerca al punto (a,b) a través de un haz de rectas.
+\begin{center}
+    \includegraphics[scale=1.30]{IMAGENES/camino LR.png} }\captionof{figure}{Camino recorrido para el Limite radial}\label{figura 20}
+    \end{center}
+
+Por lo tanto haremos las siguientes consideraciones para concluir la existencia o no del limite doble:
+\begin{itemize}
+    \item 	Si el límite radial depende de la pendiente m podemos asegurar que no existe el límite doble, pues por diferentes caminos obtengo valores distintos.
+    \item Si $L_{1}=L_{2}\neq L{R}$, entonces decimos que no existe el límite doble.
+    \item Si el límite radial existe; no nos asegura la existencia del límite doble.
+\end{itemize}
+\textbf{Caso particular}\\
+Cuando el punto (a, b) es el origen  O(0,0), la ecuación de las rectas que pasan por el origen es   y = mx. Simbólicamente:\\
+$L_{R}=\displaystyle\lim_{x\to 0;\;y=mx}f(x,y)$\\
+Como último caso consideraremos:
+\begin{definicion}[Límite paraboidal]
+Es aquel en el cual consideramos como caminos, parábolas que pasan por el punto (a,b) de ecuación $y=c(x-a)^{2}+b$\\
+\textbf{Simbólicamente:} $L_{p}=\displaystyle\lim_{x\to a\;;y=c(xa)^{2}+b}f(x,y)$\\
+
+    
+\end{definicion}
+\textbf{Caso particular}\\
+Cuando el punto (a, b) es el origen  O(0,0), la ecuación de las parábolas es   $y=c.x^2$
+Entonces tenemos que $L_{p}=\displaystyle\lim_{x\to 0\;;y=cx^{2}}f(x,y)$\\
+A continuación mostramos en resumen el procedimiento para el calculo del limite doble.\\
+\textbf{Procedimiento para calcular el limite doble}\\
+\begin{itemize}
+    \item Evaluamos el límite trabajando sobre la función, reemplazando simultáneamente x e y por los valores a y b, cuando fuese posible, y eliminando indeterminaciones. Si alcanzamos un valor determinado, ese es el límite doble buscado. En el caso de que no podemos eliminar indeterminaciones, deberemos considerar los límites iterados $L_{1} y L_{2}$ 
+    \item Si al evaluar$L_{1} y L_{2}$  estos resultaran distintos $L_{1}\neq L_{2}$ , se concluye la no existencia del límite doble. Caso contrario si $L_{1} = L_{2}$ no puede concluirse nada sobre la existencia del límite doble y deberemos evaluar el límite radial $L_{R}$.
+    \item Si al considerar $L_{R}$ se tuviese el caso de que $L_{1}=L_{2}\neq}L_{R}$ se concluye que el límite doble no existe.
+    \item Si se tiene que $L_{1}=L_{2}=L_{R}$  no puede concluirse sobre la existencia del límite doble, debido a que se probaron solo tres de los infinitos caminos para acercarse al punto (a,b). Solo podemos decir que si el limite doble existe sería igual a esos limites. Deberíamos evaluar el Limite paraboidal $L_{p}$.
+    \item Si al considerar $L_{p}$ se tuviese el caso $L_{1}=L_{2}=L_{R}\neq L_{p}$ se concluye que el límite doble no existe.
+    \item Si se tiene que $L_{1}=L_{2}=L_{R}= L_{p}$ no puede concluirse sobre la existencia el límite doble, debido a que se probaron solo cuatro de los infinitos caminos para acercarse al punto (a,b). Solo podemos decir que es muy probable que si ese límite doble existe sería igual al valor común obtenido.
+    \end{itemize}
+    \begin{ejemplo}[Límites de funciones de dos variables]
+    Calcule, si existen, los siguientes límites:
+    \begin{enumerate}
+        \item $\displaystyle\lim_{(x,y)\to(0,1)}\frac{x^{4}-(y-1)^{4}}{x^{2}+(y-1)^{2}}$\\
+        Si reemplazamos (x, y) por (0,1) tenemos una indeterminación de la forma $\frac{0}{0}$. Podemos factorear el numerador y simplificar y obtenemos:\\
+        $\displaystyle\lim_{(x,y)\to(0,1)}\frac{x^{4}-(y-1)^{4}}{x^{2}+(y-1)^{2}}=\displaystyle\lim_{(x,y)\to(0,1)}\frac{(x^{2}+(y-1)^{2}).(x^{2}-(y-1)^{2})}{x^{2}+(y-1)^{2}}=\displaystyle\lim_{(x,y)\to(0,1)}x^{2}-(y-1)^{2}=0$\\
+        Por lo tanto existe el límite doble y es igual a 0.
+        \item $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x-y}{x+y}$\\
+        En este caso, si reemplazamos (x, y) por (0, 0) tenemos una indeterminación de la forma $\frac{0}{0}$. Pero no podemos factorear el numerador y/o denominador para simplificar. Por lo tanto analizamos por diferentes caminos:\\
+        $L_{1}=\displaystyle\lim_{x\to 0}\left(\displaystyle\lim_{y\to 0}\frac{x-y}{x+y}\right)=\displaystyle\lim_{x\to 0}1=1$\\
+        $L_{2}=\displaystyle\lim_{y\to 0}\left(\displaystyle\lim_{x\to 0}\frac{xy}{x+y}\right)=\displaystyle\lim_{y\to 0}-1=-1$\\
+        Como $L_{1}\neq L_{2}$ concluimos que no existe  $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x-y}{x+y}$
+        \item $L_{1}=\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^{2}y}{x^{4}+y^{2}}$\\
+        $\displaystyle\lim_{x\to 0}\left(\displaystyle\lim_{y\to 0}\frac{x^{2}y}{x^{4}+y^{2}}\right)=\displaystyle\lim_{x\to 0}0=0$\\
+        $L_{2}=\displaystyle\lim_{y\to 0}\left(\displaystyle\lim_{x\to 0}\frac{x^{2}y}{x^{4}+y^{2}}\right)=\displaystyle\lim_{y\to 0}0=0$\\
+        $L_{R}=\displaystyle\lim_{x\to 0\;y=mx}\frac{x^{2}y}{x^{4}+y^{2}}=\displaystyle\lim_{x\to 0}\frac{mx^{3}}{x^{4}+m^{2}x^{2}}=\displaystyle\lim_{x\to 0}\frac{mx}{x^{2}+m^{2}}=0$\\
+        Los límites iterados y el límite radial son iguales e iguales a cero, pero si calculamos el límite paraboidal  obtenemos:\\
+      $L_{p}=\displaystyle\lim_{x\to 0\;;y=cx^{2}}\frac{x^{2}y}{x^{4}+y^{2}}=\displaystyle\lim_{x\to 0}\frac{cx^{4}}{x^{4}+c^{2}x^{4}}=\displaystyle\lim_{x\to 0}\frac{c}{1+c^{2}}=\frac{c}{1+c^{2}}$\\
+      Como el límite paraboidal depende de c ,podemos concluir que el límite buscado no existe.
+           
+            
+        
+        
+        
+    \end{enumerate}
+        
+    \end{ejemplo}
+    \subsection{Continuidad de una función de dos variables independientes}
+    \begin{definicion}[Continuidad en un punto]
+    Una función f  definida por  z = f(x, y)  es continua en el punto (a, b), si se cumplen las tres condiciones siguientes:
+    \begin{enumerate}
+        \item $\exists f(a,b)$
+        \item $\exists\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)$
+        \item $\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)=f(a,b)$
+    \end{enumerate}
+        
+    \end{definicion}
+    \textbf{Propiedades de las funciones continuas}\\
+    Los teoremas acerca de la continuidad para funciones de una variable pueden generalizarse para funciones de dos variables independientes. 
+    \begin{enumerate}
+        \item 	Si f y g son funciones continuas en el punto (a, b) entonces:
+        \begin{itemize}
+        \item 	f + g es continua en (a, b).  
+        \item 	f - g es continua en (a, b). 
+        \item 	f . g es continua en (a, b).
+        \item 	f / g es continua en (a, b) siempre que $g(a, b)\neq 0$
+        \end{itemize}
+        \item 	Una función f es continua en un conjunto D, si f es continua en cada uno de los puntos de D.
+       
+        \end{enumerate}
+        \subsubsection{Funciones discontinuas}
+    \begin{definicion}
+        Si una función f de dos variables no cumple con la definición de continuidad en el punto (a, b), se dice que f es discontinua en el punto (a, b).
+    \end{definicion}
+    \textbf{Clasificación de discontinuidades}\\
+    Si la funcion definida por z= f(x,y) presenta una discontinuidad en el punto (a,b),la clasificación de dicha discontinuidad dependerá de la existencia o no del $\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)$
+    \begin{itemize}
+        \item 	Una función f de dos variables decimos que tiene una \textbf{discontinuidad evitable en (a, b)} si existe el $\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)$ y podemos redefinir la función convirtiéndola en otra función que sea continua en el punto (a,b).
+        \item 	Una función f de dos variables decimos que tiene una \textbf{discontinuidad no evitable en (a, b)} si no existe el $\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)$
+    \end{itemize}
+    \begin{ejemplo}
+         Determine los puntos en los que la siguiente función es continua:
+         $ f(x,y)=\frac{x^{2}+y^{2}}{\sqrt{9-x^{2}+y}}$ \\
+         Dom f= $\left\{ (x,y)/ y>x^{2}-9\right\}$\\
+         f es continua $\forall (x,y)/ y>x^{2}-9$, ya que f es el cociente de dos funciones continuas en dicho dominio.
+        \end{ejemplo}
+    \begin{ejemplo}
+        Analice si la siguiente función es continua en el punto (1,0) Justifique su respuesta. Clasifique si es discontinua y redefina la función,  cuando sea posible. \\
+        \begin{center}
+            \includegraphics[scale=1.30]{IMAGENES/disccontinua.png}
+        \end{center}
+        Usamos la definición para ver si es continua:
+        \begin{itemize}
+            \item $\exists f(1,0)=2$
+            \item $\displaystyle \lim_{(x,y) \to (1,0)}f(x,y)=\displaystyle \lim_{(x,y) \to (1,0)}\frac{(x-1)^{2}-y^{2}}{x+y-1}=\displaystyle \lim_{(x,y) \to (1,0)}\frac{(x-1-y)(x-1+y)}{x+y-1}=0$
+            \item $\displaystyle \lim_{(x,y) \to (1,0)}f(x,y)=0\neq f(1,0)=2$
+        \end{itemize}
+        Por lo tanto f es discontinua en (1,0) y como $\exists \displaystyle \lim_{(x,y) \to (1,0)}f(x,y)$ la discontinuidad en (1,0) es evitable. Podemos redefinir la funcion f de la siguiente manera para que sea continua en (1,0)
+        \begin{center}
+            \includegraphics[scale=1.30]{IMAGENES/redefincion.png}
+        \end{center}
+        
+    \end{ejemplo}
+    
+

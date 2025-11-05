@@ -1,0 +1,193 @@
+%% Configuracion generales para entornos
+% Contadores
+\newcounter{tcbteo}[chapter]
+\renewcommand{\thetcbteo}{\thechapter.\arabic{tcbteo}}
+
+\newcounter{tcbdefi}[chapter]
+\renewcommand{\thetcbdefi}{\thechapter.\arabic{tcbdefi}}
+
+\newcounter{tcblema}[chapter]
+\renewcommand{\thetcblema}{\thechapter.\arabic{tcblema}}
+
+\newcounter{tcbcoro}[chapter]
+\renewcommand{\thetcbcoro}{\thechapter.\arabic{tcbcoro}}
+
+\newcounter{tcbpropo}[chapter]
+\renewcommand{\thetcbpropo}{\thechapter.\arabic{tcbpropo}}
+
+\newcounter{tcbvoca}[chapter]
+\renewcommand{\thetcbvoca}{\thechapter.\arabic{tcbvoca}}
+
+\newcounter{tcbejem}[chapter]
+\renewcommand{\thetcbejem}{\thechapter.\arabic{tcbejem}}
+
+\newlength{\examlen}
+
+\tikzset{
+    wnodeTeorema/.style={%
+         rectangle,  top color=gray!5, bottom color=gray!5,
+         inner sep=1mm,anchor=west,font=\bf\sffamily},
+   wnodeminimo/.style={%
+         rectangle,  top color=white, bottom color=white,
+         text=azulF,inner sep=1mm,anchor=west,font=\bf\sffamily}      
+}
+
+% Entorno para contenidos, objetivos y conocimientos previos.
+\newtcolorbox{informacion}[2][]{enhanced,
+before skip=2mm,after skip=2mm,
+colback=black!5,colframe=black!50,boxrule=0.2mm,
+attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!10!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!80!black,right color=tcbcolback!80!black,
+middle color=tcbcolback!95!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},
+fonttitle=\bfseries,
+title={#2},#1}
+
+% Entorno con anillos color verde (posiblemente cambiar color)
+\newlist{cirlist}{itemize}{1}
+\setlist[cirlist]{
+    label = {\wverde \faCircle[regular]}
+}
+
+
+% Entorno para  Definiciones---------------------------------------------------
+\newtcolorbox{wwdefinicion}[3][]{%
+arc=0mm,breakable,enhanced,colback=gray!5,boxrule=0pt,drop fuzzy shadow,
+top=6mm,fontupper=\normalsize,step and label={tcbdefi}{#3},
+overlay unbroken  = {
+%barra vertical
+\draw[color=colordominanteF,line width=3pt] ([xshift=2pt] frame.north west)--([xshift=2pt] frame.south west);        
+%Caja de Título: defi --
+\node[wnodeTeorema](titulodefi) at ([xshift=4.5pt, yshift=-3mm]frame.north west)
+{\textbf{Definición \thetcbdefi \;#2}};
+                }, %overlay
+overlay first  = {
+%barra vertical
+\draw[color=colordominanteF,line width=3pt] ([xshift=2pt] frame.north west)--([xshift=2pt] frame.south west);        
+%Caja de Título: defi --
+\node[wnodeTeorema](titulodefi) at ([xshift=4.5pt, yshift=-3mm]frame.north west)
+{\textbf{Definición \thetcbdefi \;#2}};
+                }, %overlay
+% Mantener borde en cambio de página
+overlay last    = {%barra vertical
+\draw[color=colordominanteF,line width=3pt] ([xshift=2pt] frame.north west)--([xshift=2pt] frame.south west);}
+#1}
+%-
+\NewDocumentEnvironment{definicion}{O{} O{} O{}}{\smallskip\begin{wwdefinicion}{#1}{#2}%
+ #3}{\end{wwdefinicion}\smallskip }
+% %DEFINICION---------------------------------------------------------
+
+% Entorno personalizado---------------------------------------------------
+\definecolor{colorejercicios}{RGB}{99,42,134}
+
+\newtcolorbox{wwejemplo}[3][]{%
+arc=0mm,breakable,%drop fuzzy shadow,
+enhanced,colback=gray!5,boxrule=0pt,top=7mm,
+fontupper=\normalsize,step and label={tcbejem}{#3},
+overlay unbroken = {
+%Borde grueso superior
+\draw[color=colorejercicios,line width=3pt] (frame.north west)--([xshift=0pt]frame.north east);
+%Caja de Titulo: Ejer --
+\node[rounded corners=3pt,  draw=colorejercicios, top color=white, bottom color=white, thick,inner sep=1mm,anchor=west, font=\bf\sffamily](tituloejem) at ([xshift=5mm, yshift=0mm]frame.north west)
+{\textbf{\color{miverde}  Ejemplo \thetcbejem \;#2}};
+%borde linea inferior
+ \draw[color=colorejercicios,line width=0.2pt] (frame.south west)--([xshift=0pt]frame.south east); 
+},%overlay
+overlay first = {
+%Borde grueso superior
+\draw[color=colorejercicios,line width=3pt] (frame.north west)--([xshift=0pt]frame.north east);
+%Caja de T�tulo: Ejer --
+\node[rounded corners=3pt,  draw=colorejercicios, top color=white, bottom color=white, thick,inner sep=1mm,anchor=west, font=\bf\sffamily](tituloejem) at ([xshift=5mm, yshift=0mm]frame.north west)
+{\textbf{\color{miverde}  Ejemplo \thetcbejem \;#2}};
+%borde l�nea inferior
+ \draw[color=colorejercicios,line width=0.2pt] (frame.south west)--([xshift=0pt]frame.south east); 
+},%overlay
+% % Mantener borde en cambio de p�gina 
+% overlay middle = {\draw[color=colordominante,line width=0.2pt] (frame.north west)--([xshift=0pt]frame.north east);
+%                 } 
+overlay middle ={},
+overlay last = { %borde l�nea inferior
+ \draw[color=colorejercicios,line width=0.2pt] (frame.south west)--([xshift=0pt]frame.south east); 
+                } 
+#1}
+%-
+\NewDocumentEnvironment{ejemplo}{O{} O{} O{}}{\smallskip\begin{wwejemplo}{#1}{#2}%
+ #3}{\end{wwejemplo}\smallskip }
+%
+
+
+% Entorno para notas y/o aclaraciones 
+\newtcolorbox{notabox}[1][]{%
+arc=0mm,breakable,
+enhanced,colback=white,
+boxrule=0pt,
+top=3mm, %Separación vertical - inicia texto
+left=25pt,
+enlarge top by=\baselineskip/2+1mm,
+enlarge top at break by=0mm,pad at break=2mm,
+fontupper={\begin{tikzpicture}[overlay]
+\node[draw=colordominanteF,line width=1pt,circle,fill=white,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,3pt){\textcolor{colordominanteF}{N}};\end{tikzpicture}}~\normalfont,  %"NOTA..."+texto del cuerpo
+%Borde y círculo
+overlay first={
+\draw[color=white,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde y círculo
+overlay first={
+\draw[color=white,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde cambio de página
+overlay last={\draw[color=white,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);}
+#1}
+%-
+ \newenvironment{nota}[1][]{\bigskip\begin{notabox}%
+ #1}{\end{notabox}}	
+% Fin nota
+
+% Teorema -----------------------------------------------------
+\newtcolorbox{wwteorema}[3][]{%
+arc=0mm,breakable,enhanced,colback=gray!5,boxrule=0pt,top=7mm,drop fuzzy shadow,
+fontupper=\normalsize,step and label={tcbteo}{#3},
+overlay unbroken = {\draw[color=colordominanteF,line width=0.2pt] (frame.north west)--([xshift=0pt]frame.north east);
+%Caja de Título: teo --
+\node[wnodeTeorema](tituloteo) at ([xshift=0pt, yshift=-4mm]frame.north west)
+{\textbf{\color{colordominanteF} Teorema \thetcbteo \;#2}};
+%Borde superior --
+\draw[colordominanteF,line width=2.5cm] ([xshift=1.25cm, yshift=0cm]frame.north west)-- +(\examlen,3pt);
+},%
+overlay first = {\draw[color=colordominanteF,line width=0.2pt] (frame.north west)--([xshift=0pt]frame.north east);
+%Caja de Título: teo --
+\node[wnodeTeorema](tituloteo) at ([xshift=0pt, yshift=-4mm]frame.north west)
+{\textbf{\color{colordominanteF} Teorema \thetcbteo \;#2}};
+%Borde superior --
+\draw[colordominanteF,line width=2.5cm] ([xshift=1.25cm, yshift=0cm]frame.north west)-- +(\examlen,3pt);
+},%
+% Mantener borde en cambio de página 
+overlay last = {\draw[color=colordominanteF,line width=0.2pt] (frame.south west)--([xshift=0pt]frame.south east);
+                } 
+#1}
+%-
+\NewDocumentEnvironment{teorema}{O{} O{} O{}}{\smallskip\begin{wwteorema}{#1}{#2}%
+ #3}{\end{wwteorema}\smallskip }
+% TEOREMA---------------------------------------------------------
